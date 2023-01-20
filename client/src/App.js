@@ -5,7 +5,32 @@ import "./App.css";
 function App() {
     const {register, handleSubmit, formState: {errors}} = useForm();
 
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = (data) => {
+
+        console.log(data);
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+        var urlencoded = new URLSearchParams();
+        urlencoded.append("username", data.username);
+        urlencoded.append("password", data.password);
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:8000/login/", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+
+    }
 
     function Login() {
         return (
