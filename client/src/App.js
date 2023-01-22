@@ -8,8 +8,6 @@ function App() {
 
     const onSubmit = (data) => {
 
-        console.log(data);
-
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
@@ -25,9 +23,22 @@ function App() {
         };
 
         fetch("http://localhost:8000/login/", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                }
+                throw {'status': response.status, response}
+
+            })
+            .then(result =>  console.log(`login succeeded: ${result}`))
+            .catch(error => {
+                if (error.status === 401) {
+                    console.log('Invalid credentials')
+                    return;
+                }
+
+                console.error('request failed', error)
+            });
 
 
     }

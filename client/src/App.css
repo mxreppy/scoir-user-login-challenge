@@ -4,15 +4,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(207, 103, 102, 0.42);
 }
 .title {
   text-align: center;
   width: 30vw;
-  background-color: rgb(190, 164, 214);
+  background-color: #031424;
+  color: #4ac1f7;
   padding: 2vw 1vw;
   border-radius: 10px 10px 0 0;
   font-size: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-block: unset;
 }
 .App {
   text-align: center;
@@ -21,7 +24,7 @@ body {
   margin: auto;
   width: 30vw;
   padding: 2vw 1vw;
-  background-color: rgb(250, 194, 194);
+  background-color: #8EAEBD;
   border-radius: 0 0 10px 10px;
 }
 input {
