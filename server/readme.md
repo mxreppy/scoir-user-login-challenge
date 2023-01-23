@@ -18,7 +18,7 @@ curl --location --request POST 'http://localhost:8000/login/' \
   --data-urlencode 'password=test123@@!!'
 ```
 
-If the server is set up succesfully running a curl test in another shell will validate it:
+If a test user and server is set up correctly, the login method should be testable with curl or postman or any other :
 
 ``` 
 $ curl --location --request POST 'http://localhost:8000/login/' \

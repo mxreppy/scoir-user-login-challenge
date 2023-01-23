@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+_this readme is boilerplate from `create-react-app`_
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
